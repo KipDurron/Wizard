@@ -13,6 +13,13 @@
 		EC284044256D20E10045052E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC284042256D20E10045052E /* Main.storyboard */; };
 		EC284046256D20E30045052E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC284045256D20E30045052E /* Assets.xcassets */; };
 		EC284049256D20E30045052E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC284047256D20E30045052E /* LaunchScreen.storyboard */; };
+		EC284055256D2BDC0045052E /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC284054256D2BDC0045052E /* Wizard.swift */; };
+		EC284059256D2DA50045052E /* WizardPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC284058256D2DA50045052E /* WizardPageController.swift */; };
+		EC284060256D415C0045052E /* WizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC28405F256D415C0045052E /* WizardView.swift */; };
+		ECF4822D2580D00D008B736B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF4822C2580D00D008B736B /* ContentView.swift */; };
+		ECF482322580E753008B736B /* ExtentionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482312580E753008B736B /* ExtentionColor.swift */; };
+		ECF482362580F3DB008B736B /* ControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482352580F3DB008B736B /* ControllerBuilder.swift */; };
+		ECF4823A2580F678008B736B /* ContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482392580F678008B736B /* ContentBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		EC284045256D20E30045052E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC284048256D20E30045052E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC28404A256D20E30045052E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC284054256D2BDC0045052E /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
+		EC284058256D2DA50045052E /* WizardPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardPageController.swift; sourceTree = "<group>"; };
+		EC28405F256D415C0045052E /* WizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardView.swift; sourceTree = "<group>"; };
+		ECF4822C2580D00D008B736B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECF482312580E753008B736B /* ExtentionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionColor.swift; sourceTree = "<group>"; };
+		ECF482352580F3DB008B736B /* ControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerBuilder.swift; sourceTree = "<group>"; };
+		ECF482392580F678008B736B /* ContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,46 @@
 		EC28403B256D20E10045052E /* Wizard */ = {
 			isa = PBXGroup;
 			children = (
+				ECF482302580E73C008B736B /* Extention */,
 				EC28403C256D20E10045052E /* AppDelegate.swift */,
 				EC28403E256D20E10045052E /* SceneDelegate.swift */,
-				EC284040256D20E10045052E /* ViewController.swift */,
 				EC284042256D20E10045052E /* Main.storyboard */,
 				EC284045256D20E30045052E /* Assets.xcassets */,
 				EC284047256D20E30045052E /* LaunchScreen.storyboard */,
 				EC28404A256D20E30045052E /* Info.plist */,
+				EC284040256D20E10045052E /* ViewController.swift */,
+				ECF482342580F3B7008B736B /* Controller */,
+				EC284069256D63C00045052E /* Content */,
+				EC284058256D2DA50045052E /* WizardPageController.swift */,
+				EC28405F256D415C0045052E /* WizardView.swift */,
+				EC284054256D2BDC0045052E /* Wizard.swift */,
 			);
 			path = Wizard;
+			sourceTree = "<group>";
+		};
+		EC284069256D63C00045052E /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				ECF4822C2580D00D008B736B /* ContentView.swift */,
+				ECF482392580F678008B736B /* ContentBuilder.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		ECF482302580E73C008B736B /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				ECF482312580E753008B736B /* ExtentionColor.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		ECF482342580F3B7008B736B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECF482352580F3DB008B736B /* ControllerBuilder.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +184,13 @@
 			files = (
 				EC284041256D20E10045052E /* ViewController.swift in Sources */,
 				EC28403D256D20E10045052E /* AppDelegate.swift in Sources */,
+				EC284055256D2BDC0045052E /* Wizard.swift in Sources */,
+				ECF482322580E753008B736B /* ExtentionColor.swift in Sources */,
+				ECF4823A2580F678008B736B /* ContentBuilder.swift in Sources */,
+				EC284060256D415C0045052E /* WizardView.swift in Sources */,
+				ECF4822D2580D00D008B736B /* ContentView.swift in Sources */,
+				EC284059256D2DA50045052E /* WizardPageController.swift in Sources */,
+				ECF482362580F3DB008B736B /* ControllerBuilder.swift in Sources */,
 				EC28403F256D20E10045052E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
