@@ -26,4 +26,12 @@ class ContentBuilder {
         wizardView.setContentView(contentView: contentView)
         return wizardView
     }
+    
+    func addLinkButton(name: String, page: WizardPageController) {
+        contentView.addLinkButton(name: name, page: page)
+    }
+    
+    func setPageTitle(title: String) {
+        contentView.setPageTitle(title: title)
+    }
 }

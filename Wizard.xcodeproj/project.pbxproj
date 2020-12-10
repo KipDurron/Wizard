@@ -20,6 +20,7 @@
 		ECF482322580E753008B736B /* ExtentionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482312580E753008B736B /* ExtentionColor.swift */; };
 		ECF482362580F3DB008B736B /* ControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482352580F3DB008B736B /* ControllerBuilder.swift */; };
 		ECF4823A2580F678008B736B /* ContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF482392580F678008B736B /* ContentBuilder.swift */; };
+		ECFFD4F825828CD900ACCD3A /* ExtensionUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFD4F725828CD900ACCD3A /* ExtensionUIControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		ECF482312580E753008B736B /* ExtentionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionColor.swift; sourceTree = "<group>"; };
 		ECF482352580F3DB008B736B /* ControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerBuilder.swift; sourceTree = "<group>"; };
 		ECF482392580F678008B736B /* ContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBuilder.swift; sourceTree = "<group>"; };
+		ECFFD4F725828CD900ACCD3A /* ExtensionUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				ECF482312580E753008B736B /* ExtentionColor.swift */,
+				ECFFD4F725828CD900ACCD3A /* ExtensionUIControl.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				EC284041256D20E10045052E /* ViewController.swift in Sources */,
 				EC28403D256D20E10045052E /* AppDelegate.swift in Sources */,
+				ECFFD4F825828CD900ACCD3A /* ExtensionUIControl.swift in Sources */,
 				EC284055256D2BDC0045052E /* Wizard.swift in Sources */,
 				ECF482322580E753008B736B /* ExtentionColor.swift in Sources */,
 				ECF4823A2580F678008B736B /* ContentBuilder.swift in Sources */,

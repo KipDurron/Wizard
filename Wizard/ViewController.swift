@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var testWizardPageList :[WizardPageController] = []
     let wizard = Wizard()
+    let navController = UINavigationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     func setupView() {
-
+        navController.modalPresentationStyle = .fullScreen
         
 //        let contentView = ContentView()
 //        contentView.addTextField(placeHolder: "Введите имя")
@@ -63,31 +64,53 @@ class ViewController: UIViewController {
         
         startWizard.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
+       
+
+      
+        
         let controllerBuilder = wizard.createWizardPageController()
         let contentBuilder = controllerBuilder.createWizardContent()
         contentBuilder.addButtonCheckExist()
-        contentBuilder.addButtonCheckExist()
         contentBuilder.addTextField(placeHolder: "Введите имя")
         contentBuilder.addTextField(placeHolder: "Введите фамилию")
-        let wizardView = contentBuilder.endAddContent()
-        let page1 = controllerBuilder.endCreateController(wizardView: wizardView)
-        testWizardPageList.append(page1)
-        
+        contentBuilder.setPageTitle(title: "Page 1")
+       
+        //Создаём вторую страницу
         let controllerBuilder2 = wizard.createWizardPageController()
         let contentBuilder2 = controllerBuilder2.createWizardContent()
         contentBuilder2.addButtonCheckExist()
         contentBuilder2.addTextField(placeHolder: "Серия паспорта")
-        contentBuilder2.addTextField(placeHolder: "Номер паспорта")
+        contentBuilder2.setPageTitle(title: "Page 2")
+       
         let wizardVie2 = contentBuilder2.endAddContent()
         let page2 = controllerBuilder2.endCreateController(wizardView: wizardVie2)
-        testWizardPageList.append(page2)
+        
+        
+        //Создаём 3 страницу
+        let controllerBuilder3 = wizard.createWizardPageController()
+        let contentBuilder3 = controllerBuilder3.createWizardContent()
+        contentBuilder3.addButtonCheckExist()
+        contentBuilder3.addTextField(placeHolder: "Улица")
+        contentBuilder3.addTextField(placeHolder: "Город")
+        contentBuilder3.addTextField(placeHolder: "Дом")
+        contentBuilder3.addTextField(placeHolder: "Квартира")
+        contentBuilder3.setPageTitle(title: "Page 3")
+        let wizardVie3 = contentBuilder3.endAddContent()
+        let page3 = controllerBuilder3.endCreateController(wizardView: wizardVie3)
+        
+        // добавляем на первую ссылку на вторую страницу
+        contentBuilder.addLinkButton(name: "to page 2", page: page2)
+        contentBuilder.addLinkButton(name: "to page 3", page: page3)
+        let wizardView = contentBuilder.endAddContent()
+        let page1 = controllerBuilder.endCreateController(wizardView: wizardView)
+
+//        page1.title = "Hellow world"
+        self.navController.viewControllers = [page1]
         
     }
     
     @objc func buttonAction() {
-        let newPage = testWizardPageList[0]
-        newPage.nextPageList = Array(testWizardPageList[1..<testWizardPageList.count])
-        self.present(newPage, animated: true)
+        self.present(self.navController, animated: true)
     }
 
 }

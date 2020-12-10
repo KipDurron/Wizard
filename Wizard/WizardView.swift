@@ -9,22 +9,22 @@ import UIKit
 
 class WizardView: UIView {
 
-    let buttonNext = UIButton()
-    let buttonBack = UIButton()
+//    let buttonNext = UIButton()
+//    let buttonBack = UIButton()
     var contentView = ContentView()
     
     func setupView() {
         self.backgroundColor = .gray
-        self.buttonNext.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonNext.setTitle("Next", for: .normal)
-        self.buttonNext.backgroundColor = .systemYellow
-        self.buttonNext.setTitleColor(.black, for: .normal)
-        self.addSubview(buttonNext)
-        self.buttonBack.translatesAutoresizingMaskIntoConstraints = false
-        self.buttonBack.setTitle("Back", for: .normal)
-        self.buttonBack.backgroundColor = .systemYellow
-        self.buttonBack.setTitleColor(.black, for: .normal)
-        self.addSubview(buttonBack)
+//        self.buttonNext.translatesAutoresizingMaskIntoConstraints = false
+//        self.buttonNext.setTitle("Next", for: .normal)
+//        self.buttonNext.backgroundColor = .systemYellow
+//        self.buttonNext.setTitleColor(.black, for: .normal)
+//        self.addSubview(buttonNext)
+//        self.buttonBack.translatesAutoresizingMaskIntoConstraints = false
+//        self.buttonBack.setTitle("Back", for: .normal)
+//        self.buttonBack.backgroundColor = .systemYellow
+//        self.buttonBack.setTitleColor(.black, for: .normal)
+//        self.addSubview(buttonBack)
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
 //        contentView.backgroundColor = .red
         self.addSubview(contentView)
@@ -39,12 +39,12 @@ class WizardView: UIView {
     override func updateConstraints() {
         super.updateConstraints()
         NSLayoutConstraint.activate([
-            self.buttonNext.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            self.buttonNext.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            self.buttonBack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            self.buttonBack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+//            self.buttonNext.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+//            self.buttonNext.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+//            self.buttonBack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+//            self.buttonBack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             self.contentView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            self.contentView.bottomAnchor.constraint(equalTo: buttonBack.topAnchor, constant: -10),
+            self.contentView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             self.contentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             self.contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
         ])

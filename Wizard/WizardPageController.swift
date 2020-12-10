@@ -15,8 +15,8 @@ class WizardPageController: UIViewController {
     override func loadView() {
 //        let uiVew = UIView()
 //        uiVew.backgroundColor = .blue
-        currentWizardView.buttonBack.addTarget(self, action: #selector(buttonBackAction), for: .touchUpInside)
-        currentWizardView.buttonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
+//        currentWizardView.buttonBack.addTarget(self, action: #selector(buttonBackAction), for: .touchUpInside)
+//        currentWizardView.buttonNext.addTarget(self, action: #selector(buttonNextAction), for: .touchUpInside)
         self.view = currentWizardView
         
     }

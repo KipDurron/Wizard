@@ -10,6 +10,7 @@ import UIKit
 class ContentView: UIView {
 
 
+    var titleName  = ""
     var viewStack = UIStackView()
     var actionStack = UIStackView()
     var actionPresentMessage : [String] = []
@@ -23,7 +24,7 @@ class ContentView: UIView {
         viewStack.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(viewStack)
         actionStack.axis = .vertical
-        actionStack.alignment = .center
+        actionStack.alignment = .fill
         actionStack.spacing = 10
         actionStack.translatesAutoresizingMaskIntoConstraints = false
         actionStack.backgroundColor = .gray
@@ -31,11 +32,33 @@ class ContentView: UIView {
         self.setNeedsUpdateConstraints()
     }
     
+    func setPageTitle(title: String) {
+        self.titleName = title
+    }
+    
     func addTextField (placeHolder: String) {
         let newTextField = UITextField()
         newTextField.backgroundColor = .white
         newTextField.placeholder = placeHolder
         viewStack.addArrangedSubview(newTextField)
+    }
+    
+    func addLinkButton(name: String, page: WizardPageController) {
+        let newButton = UIButton()
+        newButton.backgroundColor = .clear
+        newButton.layer.cornerRadius = 5
+        newButton.layer.borderWidth = 3
+        newButton.layer.borderColor = UIColor.blue.cgColor
+        newButton.setTitle(name, for: .normal)
+        newButton.setTitleColor(.blue, for: .normal)
+        newButton.addAction(for: .touchUpInside) { [unowned self] in
+            if textFieldNotEmpty() {
+                self.wizardPageController?.navigationController?.pushViewController(page, animated: true)
+            } else {
+                showLoginError(errorText: "не все поля заполнены")
+            }
+        }
+        actionStack.addArrangedSubview(newButton)
     }
     
     func addButtonCheckExist () {
@@ -48,16 +71,22 @@ class ContentView: UIView {
         actionStack.addArrangedSubview(newButton)
     }
     
-    @objc func actionCheckExist() {
-        // get the array of arranged subviews
-            let stackElems = viewStack.arrangedSubviews
+    func textFieldNotEmpty() -> Bool{
+        let stackElems = viewStack.arrangedSubviews
         for elem in stackElems {
             if let textField = elem as? UITextField {
                 if textField.text! == "" {
-                    showLoginError(errorText: "не все поля заполнены")
-                    
+                return false
                 }
             }
+        }
+        return true
+    }
+    
+    @objc func actionCheckExist() {
+        // get the array of arranged subviews
+        if !textFieldNotEmpty() {
+            showLoginError(errorText: "не все поля заполнены")
         }
     }
     
@@ -74,7 +103,7 @@ class ContentView: UIView {
     override func updateConstraints() {
         super.updateConstraints()
         NSLayoutConstraint.activate([
-            self.viewStack.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            self.viewStack.topAnchor.constraint(equalTo: topAnchor, constant: 60),
 //            self.viewStack.bottomAnchor.constraint(equalTo: actionStack.topAnchor, constant: -10),
             self.viewStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             self.viewStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
