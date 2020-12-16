@@ -75,13 +75,23 @@ class ViewController: UIViewController {
         contentBuilder.addTextField(placeHolder: "Введите фамилию")
         contentBuilder.setPageTitle(title: "Page 1")
        
+        //Создаём 4 страницу
+        let controllerBuilder4 = wizard.createWizardPageController()
+        let contentBuilder4 = controllerBuilder4.createWizardContent()
+        contentBuilder4.addButtonCheckExist()
+        contentBuilder4.addTextField(placeHolder: "Любимый цвет")
+
+        contentBuilder4.setPageTitle(title: "Page 4")
+        let wizardVie4 = contentBuilder4.endAddContent()
+        let page4 = controllerBuilder4.endCreateController(wizardView: wizardVie4)
+        
         //Создаём вторую страницу
         let controllerBuilder2 = wizard.createWizardPageController()
         let contentBuilder2 = controllerBuilder2.createWizardContent()
         contentBuilder2.addButtonCheckExist()
         contentBuilder2.addTextField(placeHolder: "Серия паспорта")
         contentBuilder2.setPageTitle(title: "Page 2")
-       
+        contentBuilder2.addLinkButton(name: "Page 4", page: page4)
         let wizardVie2 = contentBuilder2.endAddContent()
         let page2 = controllerBuilder2.endCreateController(wizardView: wizardVie2)
         
@@ -97,6 +107,8 @@ class ViewController: UIViewController {
         contentBuilder3.setPageTitle(title: "Page 3")
         let wizardVie3 = contentBuilder3.endAddContent()
         let page3 = controllerBuilder3.endCreateController(wizardView: wizardVie3)
+        
+       
         
         // добавляем на первую ссылку на вторую страницу
         contentBuilder.addLinkButton(name: "to page 2", page: page2)
